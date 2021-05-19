@@ -31,7 +31,8 @@ public class StringCalculator {
 				
 			}
 			else {
-				total+=Integer.parseInt(num);
+				if(Integer.parseInt(num)<1000)
+					total+=Integer.parseInt(num);
 			}
 			
 			

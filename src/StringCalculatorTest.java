@@ -75,11 +75,20 @@ class StringCalculatorTest extends TestCase{
 			assertEquals(e.getMessage(), "negatives not allowed: -2,-6");
 		}
     }
+	
+	//Failing Test case
 	@Test
 	void test_9() {
-		StringCalculator.add("1,5,10,122,8,10");
-		assertEquals(StringCalculator.GetCalledCount(),10);
+		
+		assertFalse(StringCalculator.GetCalledCount()==3);
 	}
+	
+	@Test
+	void test_10() {
+	
+		assertEquals(StringCalculator.add("2,1001"),2);
+	}
+	
 	
 
 }

@@ -61,13 +61,19 @@ class StringCalculatorTest extends TestCase{
 	}
 	@Test
     void test_8(){
-    	try {
+		try {
 			StringCalculator.add("-1,2");
 		}
 		catch (IllegalArgumentException e){
-			assertEquals(e.getMessage(), "negatives not allowed");
+			assertEquals(e.getMessage(), "negatives not allowed: -1");
 		}
 
+		try {
+			StringCalculator.add("1,-2,4,-6");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "negatives not allowed: -2,-6");
+		}
     }
 	
 

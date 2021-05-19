@@ -18,15 +18,23 @@ public class StringCalculator {
 	
 	private static int sum(String[] s) {
 		int total = 0;
+		String neg_s = "";
 		for(String num:s) {
 			if(Integer.parseInt(num)<0) {
-				throw new IllegalArgumentException("negatives not allowed");
+				if(neg_s.equals("")) 
+					neg_s+=num;
+				else
+					neg_s+=(","+num);
+				
 			}
 			else {
 				total+=Integer.parseInt(num);
 			}
 			
 			
+		}
+		if(!neg_s.equals("")){
+			throw new IllegalArgumentException("negatives not allowed: " + neg_s);
 		}
 		return total;
 	}

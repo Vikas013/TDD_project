@@ -52,7 +52,13 @@ class StringCalculatorTest extends TestCase{
 		
 		
 	}
-	
+	@Test
+	void test_7() {
+		
+		assertEquals(StringCalculator.add("//;\n1;2"),3);
+		
+		
+	}
 	
 
 }

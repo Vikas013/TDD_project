@@ -1,6 +1,9 @@
 
 public class StringCalculator {
+	static int count=0; 
 	public static int add(String text) {
+		StringCalculator.count+=1;
+		
 		if(text.equals("")){
 			return 0;
 		}
@@ -40,6 +43,9 @@ public class StringCalculator {
 	}
 	private static String[] splitNumbers(String n,String d) {
 		return n.split(d);
+	}
+	public static int GetCalledCount() {
+		return StringCalculator.count;
 	}
 	
 		

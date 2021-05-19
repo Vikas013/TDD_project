@@ -59,6 +59,16 @@ class StringCalculatorTest extends TestCase{
 		
 		
 	}
+	@Test
+    void test_8(){
+    	try {
+			StringCalculator.add("-1,2");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "negatives not allowed");
+		}
+
+    }
 	
 
 }

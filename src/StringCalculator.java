@@ -19,7 +19,13 @@ public class StringCalculator {
 	private static int sum(String[] s) {
 		int total = 0;
 		for(String num:s) {
-			total+=Integer.parseInt(num);
+			if(Integer.parseInt(num)<0) {
+				throw new IllegalArgumentException("negatives not allowed");
+			}
+			else {
+				total+=Integer.parseInt(num);
+			}
+			
 			
 		}
 		return total;
